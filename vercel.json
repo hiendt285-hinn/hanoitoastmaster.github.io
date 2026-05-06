@@ -1,8 +1,14 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/",
-      "destination": "/shdk.html"
+      "destination": "/shdk.html",
+      "permanent": false
+    },
+    {
+      "source": "/index.html",
+      "destination": "/shdk.html",
+      "permanent": false
     }
   ]
 }
