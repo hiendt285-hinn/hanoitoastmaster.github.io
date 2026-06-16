@@ -1,0 +1,11 @@
+{
+  "routes": [
+    {
+      "src": "^/$",
+      "dest": "/shdk_speakathon.html"
+    },
+    {
+      "handle": "filesystem"
+    }
+  ]
+}
