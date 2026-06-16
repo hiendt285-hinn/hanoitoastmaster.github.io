@@ -2,12 +2,12 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/shdk.html",
+      "destination": "/shdk_speakathon.html",
       "permanent": false
     },
     {
       "source": "/index.html",
-      "destination": "/shdk.html",
+      "destination": "/shdk_speakathon.html",
       "permanent": false
     }
   ]
