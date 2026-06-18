@@ -125,12 +125,14 @@
                         - Timer: <span class="shdk-timer-combined"></span><br>
                         - Ah-Counter: <span class="shdk-ahcounter-combined"></span><br>
                         - Grammarian: <span class="shdk-grammarian-combined"></span><br>
+                        - General Evaluator / Đánh giá tổng quát<br>
                     </td>
                     <td class="pic">
                         ToD: <span id="shdk-tod"></span><br>
                         Timer: <span class="shdk-timer-combined"></span><br>
                         AhCounter: <span class="shdk-ahcounter-combined"></span><br>
                         Grammarian: <span class="shdk-grammarian-combined"></span><br>
+                        GE: <span class="shdk-ge"></span><br>
                         S1-E1: <span id="shdk-speaker1"></span> - <span id="shdk-eva1"></span><br>
                         S2-E2: <span id="shdk-speaker2"></span> - <span id="shdk-eva2"></span><br>
                         S3-E3: <span id="shdk-speaker3"></span> - <span id="shdk-eva3"></span><br>
@@ -217,8 +219,8 @@
                             href="https://www.fb.com/hanoi.toastmasters.club/">https://fb.com/hanoi.toastmasters.club/</a>
                     </td>
                     <td class="time">20:39 - 20:44<br>(5&#39;)</td>
-                    <td class="content"> Nghỉ giải lao / Hoạt động kết nối</td>
-                    <td class="pic"></td>
+                    <td class="content">Đánh giá tổng quát</td>
+                    <td class="pic">GE: <span class="shdk-ge"></span></td>
                 </tr>
                 <tr>
                     <td rowspan="2">
@@ -302,7 +304,8 @@
                         <div class="form-group">
                             <label class="fw-bold" for="input-ge">Đánh giá tổng quát - General Evaluator
                                 (GE)</label>
-                            <input type="text" class="form-control  form-control-sm" id="input-ge">
+                            <input type="text" class="form-control  form-control-sm" id="input-ge"
+                                oninput="onGEChanged()">
                         </div>
 
                         <h6 class="fw-bold mt-2">Chặng 1</h6>
@@ -707,7 +710,7 @@
         if (val) {
             $('#input-ge').val(val);
         }
-        $('#shdk-ge').toArray().forEach(element => {
+        $('.shdk-ge').toArray().forEach(element => {
             element.textContent = $('#input-ge').val();
         });
         localStorage.setItem('ge', $('#input-ge').val());
