@@ -299,17 +299,6 @@
                                 <input type="text" class="form-control  form-control-sm" id="input-grammarian2">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="form-group col">
-                                <label class="fw-bold" for="input-topicmaster">Điều phối Phản ứng nhanh -
-                                    Topicmaster</label>
-                                <input type="text" class="form-control  form-control-sm" id="input-topicmaster">
-                            </div>
-                            <div class="form-group col">
-                                <label class="fw-bold" for="input-evatopicmaster">Đánh giá phản ứng nhanh</label>
-                                <input type="text" class="form-control  form-control-sm" id="input-evatopicmaster">
-                            </div>
-                        </div>
                         <div class="form-group">
                             <label class="fw-bold" for="input-ge">Đánh giá tổng quát - General Evaluator
                                 (GE)</label>
@@ -471,8 +460,6 @@
             'input-ahcounter2': onAhCounter2Changed,
             'input-grammarian1': onGrammarian1Changed,
             'input-grammarian2': onGrammarian2Changed,
-            'input-topicmaster': onTopicmasterChanged,
-            'input-evatopicmaster': onEvaTopicmasterChanged,
             'input-ge': onGEChanged,
             'input-speaker1': onSpeaker1Changed,
             'input-eva1': onEva1Changed,
@@ -566,8 +553,6 @@
         const gramSplit = splitRolePair(shdk.grammarian);
         onGrammarian1Changed(shdk.grammarian1 || gramSplit.first);
         onGrammarian2Changed(shdk.grammarian2 || gramSplit.second);
-        onTopicmasterChanged(shdk.topicmaster);
-        onEvaTopicmasterChanged(shdk.evatopicmaster);
         onGEChanged(shdk.ge);
         onSpeaker1Changed(shdk.speaker1);
         onEva1Changed(shdk.eva1);
@@ -716,26 +701,6 @@
         });
         localStorage.setItem('grammarian2', value);
         refreshCombinedRoles();
-    }
-
-    function onTopicmasterChanged(val) {
-        if (val) {
-            $('#input-topicmaster').val(val);
-        }
-        $('[id=shdk-topicmaster]').toArray().forEach(element => {
-            element.textContent = $('#input-topicmaster').val();
-        });
-        localStorage.setItem('topicmaster', $('#input-topicmaster').val());
-    }
-
-    function onEvaTopicmasterChanged(val) {
-        if (val) {
-            $('#input-evatopicmaster').val(val);
-        }
-        $('#shdk-evatopicmaster').toArray().forEach(element => {
-            element.textContent = $('#input-evatopicmaster').val();
-        });
-        localStorage.setItem('evatopicmaster', $('#input-evatopicmaster').val());
     }
 
     function onGEChanged(val) {
